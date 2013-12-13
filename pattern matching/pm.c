@@ -26,14 +26,14 @@ typedef struct {
 double area(shape_t *s) {
     switch (s->type) {
         case Rectangle: return (s->data.rdata.width * s->data.rdata.height);
-        case Circle:    return (M_PI * s->data.cdata.radius * s->data.cdata.radius);
+        case Circle:    return (acos(-1.0) * s->data.cdata.radius * s->data.cdata.radius);
         case Square:    return (s->data.sdata.side * s->data.sdata.side);
     }
     return 0;
 }
 
 int main(void) {
-    printf("Rectangle: %f\n", area(&(shape_t){Rectangle, {3, 4}}));
-    printf("Circle:    %f\n", area(&(shape_t){Circle,    {5   }}));
-    printf("Square:    %f\n", area(&(shape_t){Square,    {5   }}));
+    printf("Rectangle: %f\n", area(&(shape_t){Rectangle, {{3, 4}}}));
+    printf("Circle:    %f\n", area(&(shape_t){Circle,    {{5, 0}}}));
+    printf("Square:    %f\n", area(&(shape_t){Square,    {{5, 0}}}));
 }
