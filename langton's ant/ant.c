@@ -95,7 +95,7 @@ int main(void)
             exit(1);
         }
         step(&cell);
-        printf("Step: %d\n", i);
+        printf("Step: %zu\n", i);
     }
 
     puts("Done.");
